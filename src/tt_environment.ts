@@ -1,18 +1,5 @@
-/* README:
-This class contains base functionality for environment classes.
-The idea would be to standardize this across project. I'm keeping it here for now since it's
-alot of effort to make a shared package but this class is project agnostic.
 
-YOU DON"T NEED TO CARE ABOUT THIS CODE. Email kobusvdwalt9@gmail.com if you have troubles or concerns. 
-
-This class has a number of benefits :
-* Static typed env variables make it easy to see which ENV variables are avaliable when coding.
-* You only have to declare the ENV variable once.
-* Startup checks ensure the environment variables are all defined.
-* Allows for postprocessing of the value you get form the ENV file. Makes enums/booleans possible.
-
-*/
-class InjectionConfig {
+class TTInjectionConfig {
   public injectionConfig = true;
   public postprocess;
   constructor(postprocess?: (value: any) => any) {
@@ -36,7 +23,7 @@ export class TTEnvironment {
       }
 
       // At this point we know the value is an inject config
-      const injectionConfig = value as InjectionConfig
+      const injectionConfig = value as TTInjectionConfig
 
       // Now we get the enviroment value
       const envValue = this.getEnvironmentVariable(key)
@@ -48,7 +35,7 @@ export class TTEnvironment {
   }
 
   protected static inject(postprocess?: (value: any) => any) {
-    return new InjectionConfig(postprocess) as any;
+    return new TTInjectionConfig(postprocess) as any;
   }
 
   private static getEnvironmentVariable(variableName: string) {
