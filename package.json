@@ -1,6 +1,6 @@
 {
   "name": "tt-environment",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "lib/tt_index.js",
   "types": "lib/tt_index.d.ts",
