@@ -8,9 +8,9 @@ You want to download the tt-environment.tgz file.
 
 #### Add to project
 To install the package we recommend copying it into a shared folder in your repo.
-Then you can install the local package with
+For example, if you saved `tt-environment.tgz` in `../packages/`, install that archive from your consuming project:
 
-> yarn add tt-environment@file:../packages/tt-environment
+> yarn add tt-environment@file:../packages/tt-environment.tgz
 
 
 ## Usage
